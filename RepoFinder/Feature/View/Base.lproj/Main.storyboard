@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,10 +15,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92C-wD-B4V">
+                                <rect key="frame" x="0.0" y="103" width="349" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4Xo-S4-T94">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL3-Wu-Hkg">
+                                <rect key="frame" x="349" y="103" width="44" height="44"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YvJ-Tg-0sr"/>
+                                    <constraint firstAttribute="width" secondItem="aL3-Wu-Hkg" secondAttribute="height" multiplier="1:1" id="eVl-wJ-eSv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass.circle" catalog="system" title=" "/>
+                                <connections>
+                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ou1-uF-7u6"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tks-Rv-Qaw">
+                                <rect key="frame" x="0.0" y="147" width="393" height="671"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RFRepoListTVCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RFRepoListTVCell" rowHeight="50" id="Z6a-I3-zyT" customClass="RFRepoListTVCell" customModule="RepoFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z6a-I3-zyT" id="3OU-gw-tRx">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6R-fr-pnh">
+                                                    <rect key="frame" x="19.999999999999986" y="10.999999999999998" width="235.66666666666663" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-Ix-rw2">
+                                                    <rect key="frame" x="265.66666666666669" y="11" width="107.33333333333331" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FDQ-Ix-rw2" secondAttribute="trailing" id="0iN-b9-CY7"/>
+                                                <constraint firstItem="FDQ-Ix-rw2" firstAttribute="leading" secondItem="o6R-fr-pnh" secondAttribute="trailing" constant="10" id="2Zv-MK-ayc"/>
+                                                <constraint firstItem="o6R-fr-pnh" firstAttribute="leading" secondItem="3OU-gw-tRx" secondAttribute="leadingMargin" id="Db4-GU-f5R"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="o6R-fr-pnh" secondAttribute="bottom" constant="10" id="Ild-Kl-iwT"/>
+                                                <constraint firstItem="FDQ-Ix-rw2" firstAttribute="top" secondItem="3OU-gw-tRx" secondAttribute="topMargin" id="Ux6-1b-NIp"/>
+                                                <constraint firstItem="o6R-fr-pnh" firstAttribute="width" secondItem="3OU-gw-tRx" secondAttribute="width" multiplier="0.6" id="Wg5-8d-nte"/>
+                                                <constraint firstItem="o6R-fr-pnh" firstAttribute="top" secondItem="3OU-gw-tRx" secondAttribute="topMargin" id="jgT-zb-Wtv"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="FDQ-Ix-rw2" secondAttribute="bottom" constant="8" id="nCD-lm-eqa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="OwnerNameLabel" destination="FDQ-Ix-rw2" id="J5H-JA-KRM"/>
+                                            <outlet property="repoNameLabel" destination="o6R-fr-pnh" id="FGf-hm-VbI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tks-Rv-Qaw" secondAttribute="bottom" id="9VS-hW-o6D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tks-Rv-Qaw" secondAttribute="trailing" id="FML-zf-5E6"/>
+                            <constraint firstItem="92C-wD-B4V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Id1-BH-7Cc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aL3-Wu-Hkg" secondAttribute="trailing" id="MFf-CU-FK8"/>
+                            <constraint firstItem="92C-wD-B4V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YBw-IQ-P1b"/>
+                            <constraint firstItem="Tks-Rv-Qaw" firstAttribute="top" secondItem="92C-wD-B4V" secondAttribute="bottom" id="cxu-KS-2PR"/>
+                            <constraint firstItem="aL3-Wu-Hkg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nlH-Nv-IRf"/>
+                            <constraint firstItem="aL3-Wu-Hkg" firstAttribute="leading" secondItem="92C-wD-B4V" secondAttribute="trailing" id="r9U-HG-lJb"/>
+                            <constraint firstItem="Tks-Rv-Qaw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xnD-5X-Nzm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Repo Finder" id="svf-Sm-WgE"/>
+                    <connections>
+                        <outlet property="searchListTableView" destination="Tks-Rv-Qaw" id="fIm-MI-NIv"/>
+                        <outlet property="searchTextField" destination="92C-wD-B4V" id="r9p-Ny-lsl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,4 +171,10 @@
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

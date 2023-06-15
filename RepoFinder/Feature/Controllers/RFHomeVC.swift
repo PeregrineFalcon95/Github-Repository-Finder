@@ -12,20 +12,21 @@ class RFHomeVC: UIViewController {
     
     
     //MARK: IBOutlets
+    @IBOutlet weak private var searchTextField: UITextField!
+    @IBOutlet weak private var searchListTableView: UITableView!
     
     
     //MARK: View's Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-            self.goToRepoDetailsVC()
-        })
+        setTableView()
     }
     
     
     //MARK: IBActions
-
+    @IBAction func searchPressed(_ sender: UIButton) {
+    }
+    
 
 }
 
@@ -36,8 +37,29 @@ extension RFHomeVC {
 
 
 //MARK: TableView Functionalites
-extension RFHomeVC {
+extension RFHomeVC : UITableViewDataSource, UITableViewDelegate{
+    private func setTableView (){
+        searchListTableView.dataSource = self
+        searchListTableView.delegate = self
+        searchListTableView.rowHeight = UITableView.automaticDimension
+        searchListTableView.estimatedRowHeight = 44
+        searchListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RFRepoListTVCell") as! RFRepoListTVCell
+        cell.configure(repoName: "Repo Name", ownerName: "Owner Name")
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+
 }
 
 
