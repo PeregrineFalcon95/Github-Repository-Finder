@@ -9,7 +9,7 @@ import UIKit
 
 class RFHomeVC: UIViewController {
     //MARK: Variables
-    let viewModel = RFRepoFinderVM()
+    private let viewModel = RFRepoFinderVM()
     
     
     //MARK: IBOutlets
@@ -25,7 +25,7 @@ class RFHomeVC: UIViewController {
     
     
     //MARK: IBActions
-    @IBAction func searchPressed(_ sender: UIButton) {
+    @IBAction private func searchPressed(_ sender: UIButton) {
         guard let searchText = searchTextField.text , !searchText.isEmpty else {return}
         performSearch(searchText: searchText)
     }
