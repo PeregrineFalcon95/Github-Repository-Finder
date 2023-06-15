@@ -9,6 +9,7 @@ import UIKit
 
 class RFHomeVC: UIViewController {
     //MARK: Variables
+    let viewModel = RFRepoFinderVM()
     
     
     //MARK: IBOutlets
@@ -25,14 +26,35 @@ class RFHomeVC: UIViewController {
     
     //MARK: IBActions
     @IBAction func searchPressed(_ sender: UIButton) {
+        guard let searchText = searchTextField.text , !searchText.isEmpty else {return}
+        performSearch(searchText: searchText)
     }
     
-
+    deinit {
+        debugPrint("RFHomeVC Deinit Called")
+    }
 }
 
-//MARK: UI Functionalities
+//MARK: Helpers
 extension RFHomeVC {
-    
+    private func performSearch(searchText: String){
+        let loaderView = LoaderView()
+        loaderView.startAnimating(view: view)
+        viewModel.searchRepositories(query: searchText) { result in
+            loaderView.stopAnimating()
+            switch result {
+            case .success(let repositories):
+                if repositories.count == 0 {
+                    self.showAlert(msg: ErrorMessages.noRepoFound)
+                }
+                DispatchQueue.main.async {
+                    self.searchListTableView.reloadData()
+                }
+            case .failure(let error):
+                self.showAlert(msg: error.localizedDescription )
+            }
+        }
+    }
 }
 
 
@@ -47,19 +69,19 @@ extension RFHomeVC : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel.repoSeachList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RFRepoListTVCell") as! RFRepoListTVCell
-        cell.configure(repoName: "Repo Name", ownerName: "Owner Name")
+        cell.configure(repoName: viewModel.repoSeachList [ indexPath.row ].name , ownerName: viewModel.repoSeachList [ indexPath.row ].owner.login)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        viewModel.selectedSearchIndex = indexPath.row
+        goToRepoDetailsVC()
     }
-
 }
 
 
@@ -69,8 +91,8 @@ extension RFHomeVC {
         guard let navigationController = navigationController else {return}
         let storyboard = UIStoryboard(storyboard: .main)
         let vc = storyboard.instantiateViewController(withIdentifier: RFRepoDetailsVC.self)
+        vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
-
     }
 }
 

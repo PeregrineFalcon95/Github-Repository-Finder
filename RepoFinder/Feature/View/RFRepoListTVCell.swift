@@ -14,7 +14,6 @@ class RFRepoListTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layoutIfNeeded()
         contentView.layer.borderColor = UIColor.darkGray.cgColor
         contentView.layer.borderWidth = 2
     }

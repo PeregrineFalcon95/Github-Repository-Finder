@@ -9,6 +9,7 @@ import UIKit
 
 class RFRepoDetailsVC: UIViewController {
     //MARK: Variables
+    var viewModel : RFRepoFinderVM? 
     
     //MARK: IBOutlets
     

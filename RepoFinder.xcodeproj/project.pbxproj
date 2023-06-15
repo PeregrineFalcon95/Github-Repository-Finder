@@ -17,13 +17,17 @@
 		6E5328612A3B02EE0075CF37 /* RepoFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5328602A3B02EE0075CF37 /* RepoFinderTests.swift */; };
 		6E53286B2A3B02EE0075CF37 /* RepoFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53286A2A3B02EE0075CF37 /* RepoFinderUITests.swift */; };
 		6E53286D2A3B02EE0075CF37 /* RepoFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53286C2A3B02EE0075CF37 /* RepoFinderUITestsLaunchTests.swift */; };
-		6E63EA262A3B042E00267F0C /* RFRipoFinderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E63EA252A3B042E00267F0C /* RFRipoFinderVM.swift */; };
+		6E63EA262A3B042E00267F0C /* RFRepoFinderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E63EA252A3B042E00267F0C /* RFRepoFinderVM.swift */; };
 		6EF8C27A2A3B084C00DB0E28 /* RFRepoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C2792A3B084C00DB0E28 /* RFRepoDetailsVC.swift */; };
 		6EF8C27C2A3B0F3200DB0E28 /* RFCommitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C27B2A3B0F3200DB0E28 /* RFCommitListVC.swift */; };
 		6EF8C27E2A3B0F9D00DB0E28 /* RFUserDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C27D2A3B0F9D00DB0E28 /* RFUserDetailsVC.swift */; };
 		6EF8C2812A3B102200DB0E28 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C2802A3B102200DB0E28 /* UIStoryboard+Extension.swift */; };
 		6EF8C2832A3B17E100DB0E28 /* RFRepoListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C2822A3B17E100DB0E28 /* RFRepoListTVCell.swift */; };
 		6EF8C2852A3B190100DB0E28 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C2842A3B190100DB0E28 /* Constants.swift */; };
+		6EF8C2872A3B241500DB0E28 /* RepositoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C2862A3B241500DB0E28 /* RepositoryModels.swift */; };
+		6EF8C2892A3B24EA00DB0E28 /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C2882A3B24EA00DB0E28 /* GitHubApiClient.swift */; };
+		6EF8C28B2A3B29A200DB0E28 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C28A2A3B29A200DB0E28 /* UIViewController+Extension.swift */; };
+		6EF8C28D2A3B2ECB00DB0E28 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C28C2A3B2ECA00DB0E28 /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,13 +62,17 @@
 		6E5328662A3B02EE0075CF37 /* RepoFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepoFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E53286A2A3B02EE0075CF37 /* RepoFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoFinderUITests.swift; sourceTree = "<group>"; };
 		6E53286C2A3B02EE0075CF37 /* RepoFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6E63EA252A3B042E00267F0C /* RFRipoFinderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRipoFinderVM.swift; sourceTree = "<group>"; };
+		6E63EA252A3B042E00267F0C /* RFRepoFinderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRepoFinderVM.swift; sourceTree = "<group>"; };
 		6EF8C2792A3B084C00DB0E28 /* RFRepoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRepoDetailsVC.swift; sourceTree = "<group>"; };
 		6EF8C27B2A3B0F3200DB0E28 /* RFCommitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFCommitListVC.swift; sourceTree = "<group>"; };
 		6EF8C27D2A3B0F9D00DB0E28 /* RFUserDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFUserDetailsVC.swift; sourceTree = "<group>"; };
 		6EF8C2802A3B102200DB0E28 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		6EF8C2822A3B17E100DB0E28 /* RFRepoListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRepoListTVCell.swift; sourceTree = "<group>"; };
 		6EF8C2842A3B190100DB0E28 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6EF8C2862A3B241500DB0E28 /* RepositoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModels.swift; sourceTree = "<group>"; };
+		6EF8C2882A3B24EA00DB0E28 /* GitHubApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
+		6EF8C28A2A3B29A200DB0E28 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		6EF8C28C2A3B2ECA00DB0E28 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,8 @@
 		6E63EA1F2A3B036200267F0C /* SingleTons */ = {
 			isa = PBXGroup;
 			children = (
+				6EF8C2882A3B24EA00DB0E28 /* GitHubApiClient.swift */,
+				6EF8C28C2A3B2ECA00DB0E28 /* LoaderView.swift */,
 			);
 			path = SingleTons;
 			sourceTree = "<group>";
@@ -187,7 +197,7 @@
 		6E63EA222A3B039300267F0C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6E63EA252A3B042E00267F0C /* RFRipoFinderVM.swift */,
+				6E63EA252A3B042E00267F0C /* RFRepoFinderVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -204,6 +214,7 @@
 		6E63EA242A3B039A00267F0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6EF8C2862A3B241500DB0E28 /* RepositoryModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF8C2802A3B102200DB0E28 /* UIStoryboard+Extension.swift */,
+				6EF8C28A2A3B29A200DB0E28 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -354,15 +366,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E63EA262A3B042E00267F0C /* RFRipoFinderVM.swift in Sources */,
+				6E63EA262A3B042E00267F0C /* RFRepoFinderVM.swift in Sources */,
 				6EF8C2852A3B190100DB0E28 /* Constants.swift in Sources */,
+				6EF8C28D2A3B2ECB00DB0E28 /* LoaderView.swift in Sources */,
 				6E53284B2A3B02ED0075CF37 /* RFHomeVC.swift in Sources */,
 				6E5328512A3B02ED0075CF37 /* RepoFinder.xcdatamodeld in Sources */,
+				6EF8C28B2A3B29A200DB0E28 /* UIViewController+Extension.swift in Sources */,
 				6EF8C2832A3B17E100DB0E28 /* RFRepoListTVCell.swift in Sources */,
 				6E5328472A3B02ED0075CF37 /* AppDelegate.swift in Sources */,
 				6EF8C27C2A3B0F3200DB0E28 /* RFCommitListVC.swift in Sources */,
 				6E5328492A3B02ED0075CF37 /* SceneDelegate.swift in Sources */,
 				6EF8C27E2A3B0F9D00DB0E28 /* RFUserDetailsVC.swift in Sources */,
+				6EF8C2872A3B241500DB0E28 /* RepositoryModels.swift in Sources */,
+				6EF8C2892A3B24EA00DB0E28 /* GitHubApiClient.swift in Sources */,
 				6EF8C27A2A3B084C00DB0E28 /* RFRepoDetailsVC.swift in Sources */,
 				6EF8C2812A3B102200DB0E28 /* UIStoryboard+Extension.swift in Sources */,
 			);
