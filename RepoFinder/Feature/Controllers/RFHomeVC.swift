@@ -69,12 +69,12 @@ extension RFHomeVC : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.repoSeachList.count
+        return viewModel.repoSearchList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RFRepoListTVCell") as! RFRepoListTVCell
-        cell.configure(repoName: viewModel.repoSeachList [ indexPath.row ].name , ownerName: viewModel.repoSeachList [ indexPath.row ].owner.login)
+        cell.configure(repoName: viewModel.repoSearchList [ indexPath.row ].name , ownerName: viewModel.repoSearchList [ indexPath.row ].owner?.login)
         return cell
     }
     

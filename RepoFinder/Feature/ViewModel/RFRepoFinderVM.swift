@@ -9,7 +9,7 @@ import Foundation
 
 class RFRepoFinderVM {
     //MARK: Variables
-    var repoSeachList : [Repository] = []
+    var repoSearchList : [Repository] = []
     var selectedSearchIndex = 0
     
     //MARK: API Consumtion
@@ -21,7 +21,7 @@ class RFRepoFinderVM {
             switch result {
             case .success(let searchResult):
                 let repositories = searchResult.items
-                self.repoSeachList = repositories
+                self.repoSearchList = repositories
                 completion(.success(repositories))
             case .failure(let error):
                 completion(.failure(error))

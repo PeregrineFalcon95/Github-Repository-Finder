@@ -8,13 +8,13 @@
 import Foundation
 
 struct Repository: Codable {
-    let name: String
-    let html_url: String
+    let name: String?
+    let html_url: String?
     let description: String?
-    let owner: Owner
-    let stargazers_count: Int
-    let forks_count: Int
-    let open_issues_count: Int
+    let owner: Owner?
+    let stargazers_count: Int?
+    let forks_count: Int?
+    let open_issues_count: Int?
 }
 
 struct Owner: Codable {
